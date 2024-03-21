@@ -13,3 +13,6 @@ Right now, I only have my main Windows PC so I don't exactly have much to work w
 
 #### Proxmox Playground
 - [Instructions for installing Proxmox onto Hyper-V](./docs/proxmox/proxmox_on_hyperv.md)
+
+#### My dev environment
+- [Ubuntu 22.04 dev environment on Hyper-V](./docs/dev/dev_env.md)
