@@ -1,0 +1,8 @@
+- name: wg pc phone conf
+  ansible.builtin.template:
+    src: "templates/{{ item }}.j2"
+    dest: "./{{ item }}"
+  loop:
+    - pc.conf
+    - phone.conf
+    - pc-all.conf

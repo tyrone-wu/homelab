@@ -1,0 +1,4 @@
+- name: restart wg-e-bpf
+  ansible.builtin.systemd:
+    name: wg-quick@wg-e-bpf.service
+    state: restarted

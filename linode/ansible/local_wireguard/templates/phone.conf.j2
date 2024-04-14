@@ -1,0 +1,10 @@
+[Interface]
+Address = {{ phone.address }}/32
+PrivateKey = {{ phone.private_key }}
+# DNS = 
+
+[Peer]
+PublicKey = {{ vps.public_key }}
+PresharedKey = {{ phone.preshared_key }}
+AllowedIPs = {{ wg.allowed_ips }}
+Endpoint = {{ wg.endpoint }}
