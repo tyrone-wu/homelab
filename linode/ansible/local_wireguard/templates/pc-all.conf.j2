@@ -1,0 +1,16 @@
+[Interface]
+Address = {{ pc.address }}/32
+PrivateKey = {{ pc.private_key }}
+DNS = 1.1.1.1
+Table = 55999
+FwMark = 55999
+PostUp = ip rule add not fwmark 55999 table 55999
+PostUp = ip rule add table main suppress_prefixlength 0
+PreDown = ip rule del table main suppress_prefixlength 0
+PreDown = ip rule del not fwmark 55999 table 55999
+
+[Peer]
+PublicKey = {{ vps.public_key }}
+PresharedKey = {{ pc.preshared_key }}
+AllowedIPs = 0.0.0.0/0
+Endpoint = {{ wg.endpoint }}

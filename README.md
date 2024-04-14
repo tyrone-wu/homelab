@@ -3,16 +3,13 @@
 Documenting my journey on learning and setting up my homelab.  
 Right now, I only have my main Windows PC so I don't exactly have much to work with. 
 
-#### My host specs: 
-- Processor: AMD Ryzen 5 2600X Six-Core Processor 3.60 GHz
-- RAM: 16GB
-- System type: 64-bit OS, x64-based processor
-- OS: Windows 11 22H2
-
 ### References
 
-#### Proxmox Playground
-- [Instructions for installing Proxmox onto Hyper-V](./docs/proxmox/proxmox_on_hyperv.md)
+- todo: write down how to setup internal switch with nat gateway for internet
 
-#### My dev environment
-- [Ubuntu 22.04 dev environment on Hyper-V](./docs/dev/dev_env.md)
+- [Dev env on Hyper-V](./docs/dev/dev_env.md)
+
+- [Proxmox on Hyper-V](./docs/proxmox/proxmox_on_hyperv.md)
+  - todo: update networking portion to include nat switch that i setup earlier
+
+- todo: write about linode server. idk if ill keep it up since im cheap

@@ -1,0 +1,16 @@
+[Interface]
+Address = {{ vps.address }}/24
+ListenPort = {{ vps.listen_port }}
+PrivateKey = {{ vps.private_key }}
+
+# pc
+[Peer]
+PublicKey = {{ pc.public_key }}
+PresharedKey = {{ pc.preshared_key }}
+AllowedIPs = {{ pc.address }}/32
+
+# phone
+[Peer]
+PublicKey = {{ phone.public_key }}
+PresharedKey = {{ phone.preshared_key }}
+AllowedIPs = {{ phone.address }}/32

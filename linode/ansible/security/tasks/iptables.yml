@@ -1,0 +1,17 @@
+- name: ensure iptables is started and enabled at boot
+  ansible.builtin.systemd:
+    name: iptables
+    state: started
+    enabled: true
+
+- name: iptables.rules
+  ansible.builtin.template:
+    src: templates/iptables.rules.j2
+    dest: /etc/iptables/iptables.rules
+    owner: root
+    group: root
+    mode: '644'
+    backup: true
+  notify:
+    - restart iptables
+    - restart docker

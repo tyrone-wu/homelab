@@ -1,0 +1,21 @@
+- name: install packages
+  community.general.pacman:
+    update_cache: true
+    state: present
+    name:
+      - wireguard-tools
+
+- name: wg-e-bpf
+  ansible.builtin.template:
+    src: templates/wg-e-bpf.conf.j2
+    dest: /etc/wireguard/wg-e-bpf.conf
+    owner: root
+    group: root
+    mode: '600'
+  notify: restart wg-e-bpf
+
+- name: ensure wg-quick@wg-e-bpf.service is started and enabled at boot
+  ansible.builtin.systemd:
+    name: wg-quick@wg-e-bpf.service
+    state: started
+    enabled: true

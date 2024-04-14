@@ -1,0 +1,12 @@
+.vscode/
+
+linode/notes.txt
+
+linode/ansible/.vault_password
+linode/ansible/**/vars/
+linode/ansible/wireguard/files/*.key
+linode/ansible/wireguard/files/*.pub
+linode/ansible/wireguard/files/*.psk
+linode/ansible/pc.conf
+linode/ansible/phone.conf
+linode/ansible/pc-all.conf
