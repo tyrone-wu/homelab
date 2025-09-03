@@ -1,0 +1,17 @@
+---
+# For configuration options and examples, please see:
+# https://gethomepage.dev/configs/info-widgets/
+
+- datetime:
+    text_size: xl
+    format:
+      timeStyle: short
+
+- resources:
+    label: storage
+    disk: /
+    refresh: 600000
+
+- search:
+    provider: duckduckgo
+    target: _blank

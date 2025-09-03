@@ -1,0 +1,18 @@
+services:
+  glances:
+    image: docker.io/nicolargo/glances:latest
+    hostname: glances
+    container_name: glances
+    networks:
+      lab_net:
+        mac_address: ${MAC_ADDRESS}
+    pid: host
+    volumes:
+      - /run/podman/podman.sock:/run/podman/podman.sock:ro
+    environment:
+      - "GLANCES_OPT=-w"
+
+networks:
+  lab_net:
+    external: true
+    name: lab

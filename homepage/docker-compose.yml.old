@@ -1,0 +1,21 @@
+services:
+  homepage:
+    image: ghcr.io/gethomepage/homepage:latest
+    container_name: homepage
+    ports:
+      - 80:3000
+    networks:
+      lab_net:
+        ipv4_address: 192.168.0.150
+    volumes:
+      - ./config:/app/config
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      HOMEPAGE_ALLOWED_HOSTS: 192.168.0.150:3000
+      PUID: 1000
+      PGID: 1000
+
+networks:
+  lab_net:
+    external: true
+    name: lab

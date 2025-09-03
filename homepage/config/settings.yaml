@@ -1,0 +1,33 @@
+---
+# For configuration options and examples, please see:
+# https://gethomepage.dev/configs/settings/
+
+title: homepage
+
+# background: /images/background.png
+
+color: slate
+
+layout:
+  monitoring:
+    style: row
+    columns: 4
+  management:
+    style: row
+    columns: 4
+  media:
+    style: row
+    columns: 4
+  dev:
+    style: row
+    columns: 6
+
+disableCollapse: true
+
+showStats: true
+
+statusStyle: "dot"
+
+#providers:
+#  openweathermap: openweathermapapikey
+#  weatherapi: weatherapiapikey

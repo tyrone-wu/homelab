@@ -1,0 +1,77 @@
+---
+# For configuration options and examples, please see:
+# https://gethomepage.dev/configs/services/
+
+- monitoring:
+    - cpu usage:
+        widget:
+          type: glances
+          url: http://192.168.11.73:61208
+          version: 4
+          metric: cpu
+          refreshInterval: 2000
+          pointsLimit: 15
+    - memory usage:
+        widget:
+          type: glances
+          url: http://192.168.11.73:61208
+          version: 4
+          metric: memory
+          refreshInterval: 2000
+          pointsLimit: 15
+    - top processes:
+        widget:
+          type: glances
+          url: http://192.168.11.73:61208
+          version: 4
+          metric: process
+          refreshInterval: 5000
+    - top containers:
+        widget:
+          type: glances
+          url: http://192.168.11.73:61208
+          version: 4
+          metric: containers
+          refreshInterval: 5000
+
+- management:
+    - OPNsense:
+        icon: opnsense.svg
+        href: https://192.168.11.1
+        description: OPNsense dashboard
+        ping: https://192.168.11.1
+        widget:
+          type: opnsense
+          url: https://192.168.11.1
+          username: "{{HOMEPAGE_VAR_OPNSENSE_API_KEY}}"
+          password: "{{HOMEPAGE_VAR_OPNSENSE_API_SECRET}}"
+          fields: ["cpu", "memory"]
+    - Proxmox:
+        icon: proxmox.svg
+        href: https://192.168.12.2:8006
+        description: PVE Web UI
+        ping: https://192.168.12.2
+        widget:
+          type: proxmox
+          url: https://192.168.12.2:8006
+          username: "{{HOMEPAGE_VAR_PVE_API_TOKEN_ID}}"
+          password: "{{HOMEPAGE_VAR_PVE_API_TOKEN_SECRET}}"
+          node: pve01
+          fields: ["vms", "lxc", "resources.cpu", "resources.mem"]
+
+- media:
+    - Kavita:
+        icon: kavita.svg
+        href: http://192.168.12.223:5000
+        description: TODO
+        ping: http://192.168.12.223
+        widget:
+          type: kavita
+          url: http://192.168.12.223:5000
+          key: "{{HOMEPAGE_VAR_KAVITA_API_KEY}}"
+          fields: ["seriesCount", "totalFiles"]
+    - Jellyfin:
+        icon: jellyfin.svg
+        href: http://localhost/
+        description: TODO
+        ping: http://192.168.12.4

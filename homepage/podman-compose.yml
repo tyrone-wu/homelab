@@ -1,0 +1,24 @@
+services:
+  homepage:
+    image: ghcr.io/gethomepage/homepage:latest
+    hostname: homepage
+    container_name: homepage
+    ports:
+      - 80:3000 # doesn't work in macvlan :/
+    networks:
+      lab_net:
+        # dhcp reserved
+        # ipv4_address: 192.168.11.4
+        mac_address: ${MAC_ADDRESS} # mac manually set after first time dhcp leasing
+    env_file: .env
+    volumes:
+      - ./config:/app/config
+      - /run/podman/podman.sock:/var/run/podman.sock
+    environment:
+      HOMEPAGE_ALLOWED_HOSTS: 192.168.11.4:3000 # dhcp reserved
+      # need to run as root since since using macvlan
+
+networks:
+  lab_net:
+    external: true
+    name: lab
